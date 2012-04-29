@@ -1,0 +1,8 @@
+name: NoGrief
+version: 0.1
+main: me.DJdur.NoGrief.NoGrief
+author: DJdur
+commands:
+    nogrief:
+        description: Reloads the config.
+        usage: /<command>
