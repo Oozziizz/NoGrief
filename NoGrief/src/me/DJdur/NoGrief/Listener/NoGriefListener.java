@@ -18,6 +18,10 @@ import org.bukkit.entity.Player;
 
 public class NoGriefListener implements Listener {
 	
+	/*@Author DJdur
+	 * This plugin is licensed to DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE.
+	 */
+	
 	Plugin plugin;
 	
 	public NoGriefListener(NoGrief main) {

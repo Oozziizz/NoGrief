@@ -10,6 +10,10 @@ import org.bukkit.plugin.Plugin;
 
 public class NoGriefEXC implements CommandExecutor {
 	
+	/*@Author DJdur
+	 * This plugin is licensed to DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE.
+	 */
+	
 	Plugin plugin;
 	
 	public NoGriefEXC(NoGrief main) {

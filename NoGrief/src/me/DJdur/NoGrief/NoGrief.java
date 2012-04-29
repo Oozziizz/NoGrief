@@ -9,6 +9,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class NoGrief extends JavaPlugin {
 	
+	/*@Author DJdur
+	 * This plugin is licensed to DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE.
+	 */
+	
 	FileConfiguration config;
 	
 	public NoGriefListener Listener = new NoGriefListener(this);
