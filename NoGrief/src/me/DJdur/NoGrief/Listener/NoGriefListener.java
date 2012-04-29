@@ -78,6 +78,9 @@ public class NoGriefListener implements Listener {
 			}
 		}
 		if(b.getType() == Material.LAVA || b.getType() == Material.LAVA_BUCKET) {
+			if(config.getBoolean("Block-Lava") == true) {
+				e.setCancelled(true);
+			}
 		}
 	}
 	

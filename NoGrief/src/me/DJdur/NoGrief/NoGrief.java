@@ -35,9 +35,9 @@ public class NoGrief extends JavaPlugin {
 		config.addDefault("TNT-error", "§cYou can't place TNT!");
 		config.addDefault("Block-Fire", true);
 		config.addDefault("Fire-error", "§cYou can't place fire.");
-		config.addDefault("Block-lava", true);
+		config.addDefault("Block-Lava", true);
 		config.addDefault("Lava-error", "§cYou can't place lava or lavabuckets.");
-		config.addDefault("Block-water", true);
+		config.addDefault("Block-Water", true);
 		config.addDefault("Water-error", "§cYou can't place water or waterbuckets.");
 		saveConfig();
 		getCommands();
