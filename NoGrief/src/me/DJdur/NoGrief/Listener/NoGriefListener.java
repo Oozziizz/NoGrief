@@ -46,9 +46,9 @@ public class NoGriefListener implements Listener {
 					bw.newLine();
 					bw.close();
 			  } catch (IOException ex) {
-				  print("**************");
+				  print("***************");
 				  print("* Log failed! *");
-				  print("**************");
+				  print("***************");
 				  ex.printStackTrace();
 			  }
 			}
@@ -68,9 +68,9 @@ public class NoGriefListener implements Listener {
 					bw.newLine();
 					bw.close();
 				} catch (IOException ex) {
-					print("**************");
+					print("***************");
 					print("* Log failed! *");
-					print("**************");
+					print("***************");
 					ex.printStackTrace();
 				}
 			}
