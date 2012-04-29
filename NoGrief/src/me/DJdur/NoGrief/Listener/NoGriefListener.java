@@ -9,6 +9,7 @@ import me.DJdur.NoGrief.NoGrief;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,10 +33,11 @@ public class NoGriefListener implements Listener {
 	public void onBlockPlace(final BlockPlaceEvent e) {
 		Player p = e.getPlayer();
 		Configuration config = plugin.getConfig();
-		if(e.getBlockPlaced().getType() == Material.TNT) {
+		Block b = e.getBlockPlaced();
+		if(b.getType() == Material.TNT) {
 			if(config.getBoolean("Block-TNT") == true) {
 				e.setCancelled(true);
-				e.getBlockPlaced().setType(Material.AIR);
+				b.setType(Material.AIR);
 				p.sendMessage(ChatColor.DARK_GREEN + "[" +  config.getString("NoGrief-warning") + "] " + config.getString("TNT-error"));
 				try {
 					File log = new File("plugins/NoGrief/nogrief-log.txt");
@@ -53,10 +55,10 @@ public class NoGriefListener implements Listener {
 			if(config.getBoolean("Block-TNT") == false) {
 			}
 		}
-		if(e.getBlockPlaced().getType() == Material.FIRE) {
+		if(b.getType() == Material.FIRE || b.getType() == Material.FLINT_AND_STEEL) {
 			if(config.getBoolean("Block-Fire") == true) {
 				e.setCancelled(true);
-				e.getBlockPlaced().setType(Material.AIR);
+				b.setType(Material.AIR);
 				p.sendMessage(e.getBlockPlaced().getType() + ". test");
 				p.sendMessage(ChatColor.DARK_GREEN + "[" + config.getString("NoGrief-warning") + "] " + config.getString("Fire-error"));
 				try {
@@ -73,8 +75,9 @@ public class NoGriefListener implements Listener {
 				}
 			}
 			if(config.getBoolean("Block-Fire") == false) {
-				
 			}
+		}
+		if(b.getType() == Material.LAVA || b.getType() == Material.LAVA_BUCKET) {
 		}
 	}
 	
