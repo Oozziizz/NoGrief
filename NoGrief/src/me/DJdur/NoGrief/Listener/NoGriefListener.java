@@ -40,21 +40,39 @@ public class NoGriefListener implements Listener {
 				try {
 					File log = new File("plugins/NoGrief/nogrief-log.txt");
 					BufferedWriter bw = new BufferedWriter(new FileWriter(log, true));
-					bw.write(p.getName() + " tried to place a TNT in world " + p.getWorld().getName() + "!");
+					bw.write(p.getName() + " tried to place TNT in world " + p.getWorld().getName() + "!");
 					bw.newLine();
 					bw.close();
-			  } catch (IOException exception) {
+			  } catch (IOException ex) {
 				  print("**************");
 				  print("* Log failed! *");
 				  print("**************");
-				  exception.printStackTrace();
+				  ex.printStackTrace();
 			  }
 			}
 			if(config.getBoolean("Block-TNT") == false) {
 			}
 		}
 		if(e.getBlockPlaced().getType() == Material.FIRE) {
-			if(config.getBoolean("Block-Fire")) {
+			if(config.getBoolean("Block-Fire") == true) {
+				e.setCancelled(true);
+				e.getBlockPlaced().setType(Material.AIR);
+				p.sendMessage(e.getBlockPlaced().getType() + ". test");
+				p.sendMessage(ChatColor.DARK_GREEN + "[" + config.getString("NoGrief-warning") + "] " + config.getString("Fire-error"));
+				try {
+					File log = new File("plugins/NoGrief/nogrief-log.txt");
+					BufferedWriter bw = new BufferedWriter(new FileWriter(log, true));
+					bw.write(p.getName() + " tried to place fire in world " + p.getWorld().getName() + "!");
+					bw.newLine();
+					bw.close();
+				} catch (IOException ex) {
+					print("**************");
+					print("* Log failed! *");
+					print("**************");
+					ex.printStackTrace();
+				}
+			}
+			if(config.getBoolean("Block-Fire") == false) {
 				
 			}
 		}
